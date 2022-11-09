@@ -1,0 +1,98 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.bigBox {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.header {
+  grid-row: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+}
+.name {
+  grid-column: inherit;
+  justify-self: left;
+}
+.navigation {
+  grid-column: inherit;
+  justify-self: right;
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+  align-items: stretch;
+}
+.pageBody {
+  grid-row: inherit;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+  min-width: 90%;
+  margin: auto;
+}
+.pageContent {
+  justify-self: center;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  min-width: 850px;
+  min-height: 850px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  max-width: 350px;
+  max-height: 350px;
+}
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.desc {
+  display: none;
+}
+.overlay:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.overlay:hover + .desc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.card img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.footer {
+  padding: auto;
+  grid-area: inherit;
+  display: grid;
+  height: 50px;
+  justify-content: center;
+  background-color: #fcfeff;
+  color: black;
+}
+.pageTitle {
+  text-align: center;
+}

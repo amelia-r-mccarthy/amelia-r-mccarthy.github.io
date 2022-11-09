@@ -1,3 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.bigBox {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  grid-row: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+}
+
+.name {
+  grid-column: inherit;
+  justify-self: left;
+}
+
+.navigation {
+  grid-column: inherit;
+  justify-self: right;
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+  align-items: stretch;
+}
+
+.pageBody {
+  grid-row: inherit;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+  min-width: 90%;
+  margin: auto;
+}
+
+.pageContent {
+  justify-self: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  min-width: 850px;
+  min-height: 850px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  max-width: 350px;
+  max-height: 350px;
+}
+
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.desc {
+  display: none;
+}
+
+.overlay:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.overlay:hover + .desc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.card img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.footer {
+  padding: auto;
+  grid-area: inherit;
+  display: grid;
+  height: 50px;
+  justify-content: center;
+  background-color: #fcfeff;
+  color: black;
+}
+
+.pageTitle {
+  text-align: center;
+}
+
+body {
+  background-color: #011627;
+  color: #fcfeff;
+  font-family: "Josefin Sans", sans-serif;
+}
+
 h1 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 64px;
+}
+
+h1.name {
+  font-size: 36px;
+}
+
+h1.navigation {
+  font-size: 22px;
+  flex: 4;
+}
+
+h1.navigation:hover {
+  color: #00a6fb;
+}
+
+.bar {
+  grid-column: 1/3;
+  height: 10px;
+  width: auto;
+  background-color: #00a6fb;
 }/*# sourceMappingURL=style.css.map */
