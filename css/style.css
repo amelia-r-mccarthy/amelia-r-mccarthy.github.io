@@ -6,11 +6,6 @@
   margin: 0;
 }
 
-.bigBox {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 .header {
   grid-row: inherit;
   display: grid;
@@ -46,13 +41,14 @@
 }
 
 .gallery {
+  padding: 5%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   min-width: 850px;
-  min-height: 850px;
+  max-width: 1000px;
 }
 
 .card {
@@ -99,9 +95,11 @@
 
 .footer {
   padding: auto;
+  bottom: 0;
   grid-area: inherit;
-  display: grid;
+  display: flex;
   height: 50px;
+  font-size: 20px;
   justify-content: center;
   background-color: #fcfeff;
   color: black;
@@ -115,6 +113,8 @@ body {
   background-color: #011627;
   color: #fcfeff;
   font-family: "Josefin Sans", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
