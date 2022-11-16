@@ -4,6 +4,8 @@
   padding: 0;
   margin: 0;
 }
+$blue: #00a6fb;
+$hoverBlue: #0a66ba;
 
 // .bigBox {
 //   display: grid;
@@ -14,10 +16,12 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: baseline;
+  padding: auto;
 }
 .name {
   grid-column: inherit;
   justify-self: left;
+  padding: 10px;
 }
 .navigation {
   grid-column: inherit;
@@ -26,17 +30,20 @@
   flex-direction: row;
   padding-left: 5%;
   align-items: stretch;
+
+  margin-right: 50px;
 }
 .pageBody {
   grid-row: inherit;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   justify-content: center;
   min-width: 90%;
   margin: auto;
 }
 .pageContent {
   justify-self: center;
+  min-height: 760px;
 }
 .gallery {
   padding: 5%;
@@ -80,6 +87,19 @@
   display: block;
 }
 
+.aboutMe {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  margin: 10%;
+  margin-top: 0px;
+}
+
+.aboutMe img {
+  min-width: 300px;
+  max-width: 500px;
+  padding-left: 20%;
+}
 .card img {
   height: 100%;
   width: 100%;
@@ -91,11 +111,23 @@
   bottom: 0;
   grid-area: inherit;
   display: flex;
-  height: 50px;
+  height: auto;
   font-size: 20px;
   justify-content: center;
   background-color: #fcfeff;
   color: black;
+}
+
+.socialIcon {
+  fill: $blue;
+  width: 50px;
+  height: auto;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  & :hover {
+    fill: $hoverBlue;
+  }
 }
 .pageTitle {
   text-align: center;
