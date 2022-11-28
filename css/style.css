@@ -6,6 +6,15 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #00a6fb;
+}
+a:hover {
+  color: #0468cc;
+  transition: color 1s;
+}
+
 .header {
   grid-row: inherit;
   display: grid;
@@ -75,20 +84,6 @@
   display: none;
 }
 
-.overlay:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-
-.overlay:hover + .desc {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-}
-
 .aboutMe {
   display: grid;
   grid-template-columns: auto auto;
@@ -132,14 +127,34 @@
   padding-bottom: 10px;
 }
 .socialIcon :hover {
-  fill: #0a66ba;
+  fill: #0468cc;
+  transition: fill 0.5s;
 }
 
 .pageTitle {
   text-align: center;
 }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
+  -webkit-animation: 2s fadeIn;
+          animation: 2s fadeIn;
   background-color: #011627;
   color: #fcfeff;
   font-family: "Josefin Sans", sans-serif;
@@ -161,10 +176,6 @@ h1.navigation {
   padding-left: 15px;
   flex: 4;
   margin: 0px;
-}
-
-h1.navigation:hover {
-  color: #00a6fb;
 }
 
 .bar {
