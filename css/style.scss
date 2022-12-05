@@ -1,4 +1,8 @@
 @import "./sass/base";
+@import "./sass/header";
+@import "./sass/footer";
+@import "./sass/content";
+@import "./sass/aboutMe";
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 @keyframes fadeIn {
@@ -16,20 +20,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
   padding: 0;
   margin: 0;
-}
-h1 {
-  font-weight: bold;
-  font-size: 64px;
-}
-h1.name {
-  font-size: 36px;
-}
-
-h1.navigation {
-  font-size: 22px;
-  padding-left: 15px;
-  flex: 4;
-  margin: 0px;
 }
 
 .bar {

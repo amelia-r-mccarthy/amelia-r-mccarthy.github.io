@@ -15,6 +15,37 @@ a:hover {
   transition: color 1s;
 }
 
+.pageTitle {
+  text-align: center;
+}
+.pageTitle h1 {
+  font-weight: bold;
+  font-size: 64px;
+}
+@media only screen and (max-width: 500px) {
+  .pageTitle h1 {
+    font-size: 20px;
+  }
+}
+
+#callista {
+  position: relative;
+  left: -10%;
+}
+
+#carmela {
+  width: 100%;
+}
+
+@media only screen and (max-width: 940px) {
+  #dtiys {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
 .header {
   grid-row: inherit;
   display: grid;
@@ -28,6 +59,14 @@ a:hover {
   justify-self: left;
   padding: 10px;
 }
+.name h1 {
+  font-size: 36px;
+}
+@media only screen and (max-width: 500px) {
+  .name h1 {
+    font-size: 18px;
+  }
+}
 
 .navigation {
   grid-column: inherit;
@@ -38,89 +77,16 @@ a:hover {
   align-items: stretch;
   margin-right: 50px;
 }
-
-.pageBody {
-  grid-row: inherit;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  justify-content: center;
-  min-width: 90%;
-  margin: auto;
+.navigation h1 {
+  font-size: 22px;
+  padding-left: 15px;
+  flex: 4;
+  margin: 0px;
 }
-
-.pageContent {
-  justify-self: center;
-  min-height: 760px;
-}
-
-.gallery {
-  padding: 5%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  min-width: 850px;
-  max-width: 1000px;
-}
-
-.card {
-  position: relative;
-  overflow: hidden;
-  max-width: 350px;
-  max-height: 350px;
-}
-
-.overlay {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.desc {
-  display: none;
-}
-
-.overlay:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  transition: all 0.5s;
-}
-
-.overlay:hover + .desc {
-  position: absolute;
-  pointer-events: none;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  transition: all 0.5s;
-}
-
-.aboutMe {
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 10px;
-  margin: 10%;
-  margin-top: 0px;
-}
-
-.aboutMe img {
-  min-width: 300px;
-  max-width: 500px;
-  padding-left: 20%;
-}
-
-.card img {
-  height: 100%;
-  width: 100%;
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+@media only screen and (max-width: 500px) {
+  .navigation h1 {
+    font-size: 14px;
+  }
 }
 
 .footer {
@@ -148,8 +114,158 @@ a:hover {
   transition: fill 0.5s;
 }
 
-.pageTitle {
-  text-align: center;
+.pageBody {
+  grid-row: inherit;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
+  min-width: 90%;
+  margin: auto;
+}
+
+.pageContent {
+  justify-self: center;
+  min-height: 760px;
+}
+
+.gallery {
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  min-width: 850px;
+  max-width: 1000px;
+}
+@media only screen and (max-width: 940px) {
+  .gallery {
+    grid-template-columns: auto;
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 5%;
+  }
+}
+@media only screen and (min-width: 1520px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 5%;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  max-width: 350px;
+  max-height: 350px;
+}
+@media only screen and (max-width: 500px) {
+  .card {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}
+.card img {
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 500px) {
+  .card img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@media only screen and (max-width: 940px) {
+  .overlay {
+    display: none;
+    pointer-events: none;
+  }
+}
+
+.desc {
+  display: none;
+}
+
+.card:hover .overlay {
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  transition: all 0.5s;
+  pointer-events: none;
+}
+.card:hover .desc {
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+@media only screen and (max-width: 940px) {
+  .card:hover .desc {
+    display: none;
+    pointer-events: none;
+  }
+}
+
+.aboutMe {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  margin: 10%;
+  margin-top: 0px;
+}
+@media only screen and (max-width: 900px) {
+  .aboutMe {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0;
+  }
+}
+.aboutMe img {
+  min-width: 300px;
+  max-width: 500px;
+  padding-left: 10%;
+}
+@media only screen and (max-width: 900px) {
+  .aboutMe img {
+    order: 2;
+    max-width: 500px;
+    height: auto;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .aboutMe img {
+    order: 2;
+    max-width: 300px;
+    height: auto;
+    padding: 0;
+  }
+}
+.aboutMe p {
+  font-size: 18px;
+}
+@media only screen and (max-width: 500px) {
+  .aboutMe p {
+    order: 1;
+    font-size: 14px;
+  }
 }
 
 @-webkit-keyframes fadeIn {
@@ -177,22 +293,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
   padding: 0;
   margin: 0;
-}
-
-h1 {
-  font-weight: bold;
-  font-size: 64px;
-}
-
-h1.name {
-  font-size: 36px;
-}
-
-h1.navigation {
-  font-size: 22px;
-  padding-left: 15px;
-  flex: 4;
-  margin: 0px;
 }
 
 .bar {

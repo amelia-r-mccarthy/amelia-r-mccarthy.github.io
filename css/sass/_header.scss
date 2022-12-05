@@ -1,0 +1,32 @@
+.header {
+  grid-row: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  padding: auto;
+}
+.name {
+  grid-column: inherit;
+  justify-self: left;
+  padding: 10px;
+  h1 {
+    font-size: 36px;
+    @include mobile-friendly(500px, 18px);
+  }
+}
+.navigation {
+  grid-column: inherit;
+  justify-self: right;
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+  align-items: stretch;
+  margin-right: 50px;
+  h1 {
+    font-size: 22px;
+    padding-left: 15px;
+    flex: 4;
+    margin: 0px;
+    @include mobile-friendly(500px, 14px);
+  }
+}

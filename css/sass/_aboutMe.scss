@@ -1,0 +1,37 @@
+.aboutMe {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  margin: 10%;
+  margin-top: 0px;
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0;
+  }
+
+  img {
+    min-width: 300px;
+    max-width: 500px;
+    padding-left: 10%;
+    @media only screen and (max-width: 900px) {
+      order: 2;
+      max-width: 500px;
+      height: auto;
+      padding: 0;
+    }
+    @media only screen and (max-width: 600px) {
+      order: 2;
+      max-width: 300px;
+      height: auto;
+      padding: 0;
+    }
+  }
+  p {
+    font-size: 18px;
+    @media only screen and (max-width: 500px) {
+      order: 1;
+      font-size: 14px;
+    }
+  }
+}

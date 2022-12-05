@@ -1,0 +1,92 @@
+.pageBody {
+  grid-row: inherit;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
+  min-width: 90%;
+  margin: auto;
+}
+.pageContent {
+  justify-self: center;
+  min-height: 760px;
+}
+.gallery {
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  min-width: 850px;
+  max-width: 1000px;
+  @media only screen and (max-width: 940px) {
+    grid-template-columns: auto;
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 5%;
+  }
+  @media only screen and (min-width: 1520px) {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 5%;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  max-width: 350px;
+  max-height: 350px;
+  @media only screen and (max-width: 500px) {
+    max-width: 250px;
+    max-height: 250px;
+  }
+  img {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    @media only screen and (max-width: 500px) {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @media only screen and (max-width: 940px) {
+    display: none;
+    pointer-events: none;
+  }
+}
+.desc {
+  display: none;
+}
+
+.card:hover {
+  .overlay {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    transition: all 0.5s;
+    pointer-events: none;
+  }
+  .desc {
+    position: absolute;
+    pointer-events: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    transition: all 0.5s;
+    pointer-events: none;
+    @media only screen and (max-width: 940px) {
+      display: none;
+      pointer-events: none;
+    }
+  }
+}
